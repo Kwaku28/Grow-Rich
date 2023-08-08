@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
+  def splash
+    return unless user_signed_in?
+      
+      redirect_to budgets_path
   end
 end
