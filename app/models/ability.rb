@@ -6,6 +6,8 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    can manage, :all, user.id
+    # logged in users can manage their own budgets and expenses
+    can :manage, Budget, author_id: user.id
+    can :manage, Expense, author_id: user.id
   end
 end
