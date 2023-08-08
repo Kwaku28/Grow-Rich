@@ -4,5 +4,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'users#index'
+  root 'users#splash'
+
+  resources :budgets, only: [:index, :show, :new, :create] do
+    resources :expenses, only: [:new, :create]
+  end
+
+  get '/splash', to: 'users#splash'
 end
