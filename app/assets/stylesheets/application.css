@@ -28,8 +28,10 @@ body {
 }
 
 .head {
-  border-bottom: 1px solid #434b54;
   color: #434b54;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 .budget {
@@ -48,4 +50,18 @@ body {
 
 .fa-bars {
   cursor: pointer;
+}
+
+.cont {
+  background-color: #d1d8e4;
+  padding-top: 2rem;
+}
+
+aside {
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.expense {
+  border-bottom: 1px solid #434b54;
 }
