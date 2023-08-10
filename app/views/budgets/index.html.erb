@@ -1,0 +1,25 @@
+<%= render 'shared/navbar', {text:"Budgets", path:budgets_path, visible:"visible"}%>
+
+<section class="container-fluid">
+  <div>
+    <% @budgets.each do |budget|%>
+      <div class="head d-flex justify-content-between align-items-center p-4">
+        <div class="budget d-flex gap-3">
+          <img src= <%= budget.icon %> height="75" width="100" alt="<%= budget.name %> icon" />
+          <div class="budget_description">
+            <h2><%= link_to budget.name, budget %></h2>
+            <p><%= budget.created_at.strftime("%B %d, %Y") %></p>
+          </div>
+        </div>
+        <div class="total_amount">
+          <p><%= "$#{budget.expenses.sum(:amount)}" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="plus d-flex justify-content-end p-5">
+    <%= link_to new_budget_path do %>
+      <i class="bi bi-plus-circle-fill"></i>
+    <% end %>
+  </div>
+</section>

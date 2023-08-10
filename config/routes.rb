@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   resources :budgets, only: [:index, :show, :new, :create] do
     resources :expenses, only: [:new, :create]
   end
-
-  get '/splash', to: 'users#splash'
 end

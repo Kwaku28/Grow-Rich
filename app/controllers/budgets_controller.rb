@@ -1,4 +1,5 @@
 class BudgetsController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource
 
   # error handling
@@ -13,14 +14,14 @@ class BudgetsController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @budgets = @user.budgets.where(author_id: current_user.id).order('created_at DESC')
+    @budgets = Budget.where(author_id: current_user.id).order('created_at DESC')
   end
 
   def show
-    @budget = current_user.budgets.includes(:expenses).find(params[:id])
+    @budget = Budget.find(params[:id])
+    @budget.author_id = current_user.id
     @expenses = @budget.expenses
-    @total = calulate_total(@expenses)
+    @total = calculate_total(@expenses)
   end
 
   def new
@@ -28,10 +29,11 @@ class BudgetsController < ApplicationController
   end
 
   def create
-    @budget = current_user.budgets.build(budget_params)
+    @budget = Budget.new(budget_params)
+    @budget.author_id = current_user.id
     if @budget.save
       flash[:notice] = 'Budget was created successfully.'
-      redirect_to @budget
+      redirect_to budgets_path
     else
       render 'new'
     end
@@ -43,7 +45,7 @@ class BudgetsController < ApplicationController
     params.require(:budget).permit(:name, :icon)
   end
 
-  def calulate_total(expenses)
+  def calculate_total(expenses)
     total = 0
     expenses.each do |expense|
       total += expense.amount
