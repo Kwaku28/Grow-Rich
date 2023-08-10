@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
     redirect_to root_path
   end
 
-  before_action :authorize_budget, only: [:new, :create]
+  before_action :authorize_budget, only: %i[new create]
 
   def new
     @expense = Expense.new
@@ -31,9 +31,9 @@ class ExpensesController < ApplicationController
   private
 
   def authorize_budget
-    unless current_user.id.to_i == Budget.find(params[:budget_id]).author_id.to_i
-      redirect_to root_path
-    end
+    return if current_user.id.to_i == Budget.find(params[:budget_id]).author_id.to_i
+
+    redirect_to root_path
   end
 
   def save_expense_and_expenditures

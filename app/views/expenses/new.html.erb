@@ -1,0 +1,24 @@
+<%= render 'shared/navbar', {text:"Add Expense", path:budget_path(params[:budget_id]), visible:"visible"}%>
+
+<div class="container-fluid py-3">
+  <%= form_with(model: @expense, url: budget_expenses_path, method: :post) do |form| %>
+    <div class="mb-3">
+      <%=form.text_field :name, class: "form-control", placeholder: 'Name', required: true %>
+    </div>
+    <div class="mb-3">
+      <%= form.number_field :amount, class: "form-control", placeholder: 'Amount', required: true %>
+    </div>
+    <div class="mb-3">
+      <% @budgets.each do |budget| %>
+        <div class="form-check form-check-inline">
+            <% checked = budget.id.to_i == params[:budget_id].to_i ? { checked: true } : {} %>
+            <%= form.check_box :selected_ids, { multiple: true}.merge(checked), budget.id, nil %>
+            <%= label_tag "budget_#{budget.id}", budget.name %>
+        </div>
+      <% end %>
+    </div>
+    <div class="d-grid">
+      <%= form.submit "Save", class: "btn btn-success" %>
+    </div>
+  <%end%>
+</div>
