@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'proxima-nova', sans-serif;
+}
+
+.navbar {
+  background-color: #3778c2;
+}
+
+.bi {
+  font-size: 5em;
+  color: #5fb523;
+}
+
+.head {
+  border-bottom: 1px solid #434b54;
+  color: #434b54;
+}
+
+.budget {
+  font-size: 1.2em;
+}
+
+.total_amount {
+  font-size: 1.5em;
+  color: #434b54;
+}
+
+.total_expense {
+  font-size: 2em;
+  color: #434b54;
+}
+
+.fa-bars {
+  cursor: pointer;
+}
