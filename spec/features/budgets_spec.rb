@@ -5,12 +5,12 @@ RSpec.describe 'Budgets', type: :feature do
     it 'should create a new budget' do
       visit new_user_registration_path
       fill_in 'Name', with: 'Lebron'
-      fill_in 'Email', with: 'kwaku28@gmail'
+      fill_in 'Email', with: 'lebron255@gmail'
       fill_in 'Password', with: 'kwaku28'
       fill_in 'Password confirmation', with: 'kwaku28'
       click_button 'Sign up'
-      visit new_user_session_path
-      fill_in 'Email', with: 'kwaku28@gmail'
+      visit user_session_path
+      fill_in 'Email', with: 'lebron255@gmail'
       fill_in 'Password', with: 'kwaku28'
       click_button 'Log in'
       visit new_budget_path

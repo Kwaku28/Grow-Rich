@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :all do
-    @user = User.create(name: 'Lebron', email: 'kwaku28@gmail.com', password: '123456', password_confirmation: '123456')
+    @user = User.create(name: 'Lebron', email: 'reken456@growrich', password: '123456', password_confirmation: '123456')
   end
 
   context 'When creating a new user' do
