@@ -4,7 +4,8 @@ RSpec.describe Budget, type: :model do
   before :all do
     @user = User.create!(name: 'Lebron', email: 'kwaku@gmail', password: 'kwaku28', password_confirmation: 'kwaku28')
     @budget = Budget.create!(name: 'Food',
-                             icon: 'https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/08/BRAND-YOURSELF-700x420.jpg?auto=format&q=60&fit=max&w=930', author_id: @user.id)
+                             icon: 'https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/08/BRAND-YOURSELF-700x420.jpg?auto=format&q=60&fit=max&w=930',
+                             author_id: @user.id)
   end
 
   context 'When creating a new budget' do

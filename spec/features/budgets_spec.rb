@@ -1,11 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Budgets', type: :feature do
-  # before :all do
-  #   @user = User.create!(name: 'Lebron', email: 'amoafo2@gmail', password: 'kwaku28', password_confirmation: 'kwaku28')
-  #   @budget = Budget.create!(name: 'Food', icon: 'https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/08/BRAND-YOURSELF-700x420.jpg?auto=format&q=60&fit=max&w=930', author_id: @user.id)
-  # end
-
   describe 'the budget creation process' do
     it 'should create a new budget' do
       visit new_user_registration_path
