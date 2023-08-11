@@ -121,7 +121,7 @@ rails db:migrate
 To run the project, execute the following command:
 
 ```sh
-  Comment out the following lines of code in the config/puma.rb file:
+ # Comment out the following lines of code in the config/puma.rb file:
 
   workers ENV.fetch("WEB_CONCURRENCY") { 4 }
   preload_app!
