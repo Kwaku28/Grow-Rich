@@ -62,7 +62,7 @@
 
 # 🚀 Live Demo <a name="live-demo"></a>
 
-👉 [Live Demo]()<br><br>
+👉 [Live Demo](https://grow-rich.onrender.com)<br><br>
 👉 [Video Walkthrough](https://www.loom.com/share/23100406d31a4bb89df777ad8264c8bb?sid=19d27a61-dae5-4fec-928a-3aef1c11e035)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
