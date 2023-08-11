@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'proxima-nova', sans-serif;
+}
+
+.navbar {
+  background-color: #3778c2;
+}
+
+.bi {
+  font-size: 5em;
+  color: #5fb523;
+}
+
+.head {
+  color: #434b54;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.budget {
+  font-size: 1.2em;
+}
+
+.total_amount {
+  font-size: 1.5em;
+  color: #434b54;
+}
+
+.total_expense {
+  font-size: 2em;
+  color: #434b54;
+}
+
+.fa-bars {
+  cursor: pointer;
+}
+
+.cont {
+  background-color: #d1d8e4;
+  padding-top: 2rem;
+}
+
+aside {
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.expense {
+  border-bottom: 1px solid #434b54;
+}
